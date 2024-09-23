@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body { 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("home-smily-logo.webp") no-repeat;     
+            background-size: cover; 
+            background-position: center;
+            gap: 30px;
+        }
+        img{
+            width: 200px;
+            height: 70px;
+        }
+        .main {
+            width: 600px;
+            border: solid 1px;
+            border-radius: 20px;
+            padding: 30px 40px;
+            box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.3);
+        }
+        .upper .aa{
+            width: 95%;
+            padding: 2%;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 1000;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+        }
+        .low .bb{
+            width: 95%;
+            padding: 2%;
+            border-radius: 40px;
+            font-size:  15px;
+            font-weight: 1000;
+            text-align: center;
+            margin:9px ;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #025fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer; 
+        }
+        .main1{
+            display: flex;
+            text-align: center; 
+            flex-direction: row;
+            border: solid 0.1px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+            width: 550px;
+            height: 280px;
+        }
+        .left{
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bolder;
+            justify-content: center;
+            height: 100%;
+            text-align: initial;
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px 0 0 20px;
+        }
+        h4{
+            font-size: x-large;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 19px;
+            font-weight: 800;
+            width: 100%;
+            height: 100%;
+            border-radius: 0 20px 20px 00px;
+            color: rgb(0, 0, 0);    
+            background-color: rgb(78, 195, 213);
+        }
+        .img1{
+            object-fit: cover;
+            border-radius: 100px;
+            width: 140px;
+            height: 140px;
+        }
+        p {
+            margin-bottom: 5px; 
+        }
+        a{
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <center><img src="appiness-logo-high.png" >   </center> 
+        <div class="upper"><br>
+            <input type="text" id="firstName" required="text" placeholder="Your Name" class="aa">
+            <!-- <input type="text" id="secondName" required="text" placeholder="Second Name" class="aa"> -->
+        </div>
+        <div class="inner">
+            <p class="low">       
+                <input type="text" id="role" required="text" placeholder="Your Role" class="bb"><br>
+                <input type="number" id="phoneNo" required="number" placeholder="Phone No" class="bb"><br>
+                <input type="text" id="linkedinProfile" required="text" placeholder="LinkedIn Profile" class="bb"><br>
+                <input type="text" id="email" required="text" placeholder="Your Mail" class="bb"><br>
+            </p>
+        </div>
+        <input type="file" id="userImage" accept="image/*" ><br>
+        <center><button onclick="ok()">Submit</button></center>
+    </div>
+
+    <div class="main1">
+        <div class="left">
+            <img class="img1"  id="pic" src="profile1.png" alt="">
+            <h4 id="name">Manikandan</h4>
+        </div>
+        <div class="right">
+            <p id="job"><i class="fa-brands fa-black-tie"></i> Front-End Developer</p>
+            <a href="https://www.appinessworld.com/"><p><i class="fa-solid fa-building"></i> Appiness Interactive Pvt. Ltd</p></a>
+            <a href="https://www.linkedin.com/in/manikandan-r-b8b4272a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><p><i class="fa-brands fa-linkedin"></i> LinkedIn</p></a>
+            <p id="phoneNoDisplay"><i class="fa-solid fa-square-phone"></i> +91 1234567890</p>
+            <p id="emailDisplay"><i class="fa-solid fa-square-envelope"></i> manikandan.r@appinessworld.com</p>
+        </div>
+    </div>
+    <script>
+        function ok() {
+            // var pic = document.getElementById("pic").value;
+            var pic = document.getElementById("userImage");
+            var firstName = document.getElementById("firstName").value;
+            var role = document.getElementById("role").value;
+            var phoneNo = document.getElementById("phoneNo").value;
+            var email = document.getElementById("email").value;
+            
+            // Update the Name, Job Role, Phone, and Email fields
+            // document.getElementById("pic").src= pic;
+            document.getElementById("name").innerHTML = firstName; 
+            document.getElementById("job").innerHTML = '<i class="fa-brands fa-black-tie"></i> ' + role;
+            document.getElementById("phoneNoDisplay").innerHTML = '<i class="fa-solid fa-square-phone"></i> ' + phoneNo;
+            document.getElementById("emailDisplay").innerHTML = '<i class="fa-solid fa-square-envelope"></i> ' + email;
+            if (pic.files && pic.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById("pic").src = e.target.result; // Set the src attribute of the image to the uploaded file
+            }
+            reader.readAsDataURL(pic.files[0]);
+
+        }
+        }
+
+    </script>
+</body>
+</html>
